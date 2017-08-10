@@ -75,7 +75,7 @@ subject_origin_airport_city = ""
 subject_destination_airport_city = ""
 
 # Configuration file.
-config_file = os.path.join("/home", "pi", "Documents", "config.json")
+config_file = os.path.join("/home", "pi", "Documents", "Flight", "config.json")
 
 # Request headers.
 headers = {'content-type': 'application/json'}
@@ -110,7 +110,7 @@ def read_config():
     email_to = readable_config["notification"]["recipients"]["email"]
     qpx_home = readable_config["home"]
     # Concatenate the Google QPX API base URL with my API key.
-    google_url = readable_config["QPX_URL"] + readable_config["AIzaSyC9POMBiqyNxkigQG9rBguzKDlvZU0BcAM"]
+    google_url = readable_config["QPX_URL"] + readable_config["API_KEY"]
 
 
 # TODO: Sent others kind of notifications (SMS?, Whatsapp?, Telegram?, A page?)
