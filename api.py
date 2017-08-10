@@ -115,22 +115,22 @@ def read_config():
 
 
 # Send email with results.
-def send_email(results_message, origin_city, destination_city, sale_total):
-    msg = MIMEText(results_message,"plain")
-    email_subject = "Flights found: {0} to {1} for {2} or "\
-    	"less".format(destination_city, origin_city, sale_total)
-    msg["subject_"] = email_subject
-    s = smtplib.SMTP(smtp_server)
-    try:
-        s.sendmail(email_from, email_to, msg.as_string())
-        s.quit()
-    except Exception as exception:
-        print "ERROR: Unable to send notification email.", exception
-        sys.exit(1)
-    else:
-    	print "INFO: Success! Notification email sent to:", email_to
-    	print "Message:", results_message
-    	sys.exit(0)
+# def send_email(results_message, origin_city, destination_city, sale_total):
+  #  msg = MIMEText(results_message,"plain")
+   # email_subject = "Flights found: {0} to {1} for {2} or "\
+    #	"less".format(destination_city, origin_city, sale_total)
+    # msg["subject_"] = email_subject
+    # s = smtplib.SMTP(smtp_server)
+    # try:
+     #   s.sendmail(email_from, email_to, msg.as_string())
+      #  s.quit()
+   # except Exception as exception:
+    #    print "ERROR: Unable to send notification email.", exception
+     #   sys.exit(1)
+   # else:
+    #	print "INFO: Success! Notification email sent to:", email_to
+    #	print "Message:", results_message
+    #	sys.exit(0)
 
 
 def get_args(argv):
