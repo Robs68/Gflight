@@ -1,7 +1,5 @@
 #!/usr/bin/python
 '''
- Copyright (C) Alan Verdugo.
-
  Description:
     This program will use the Google QPX API to look for airplane tickets which 
     match certain criteria.
