@@ -60,7 +60,7 @@ from datetime import date, datetime, timedelta
 # Log management.
 import logging
 
-print('Test')
+print('Lancement du script Gflight')
 
 results_message = []
 results_message_string = ""
