@@ -60,6 +60,7 @@ from datetime import date, datetime, timedelta
 # Log management.
 import logging
 
+print('Test')
 
 results_message = []
 results_message_string = ""
