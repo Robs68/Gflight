@@ -276,8 +276,8 @@ def main(origin1, destination1, departure_date, duration, delay, solutions,
         # Concatenate the list of result messages into a single string.
         results_message_string = "\n".join(results_message)
 
-    send_email(results_message_string, subject_origin_city, 
-    	subject_destination_city, trip["saleTotal"])
+   # send_email(results_message_string, subject_origin_city, 
+    #	subject_destination_city, trip["saleTotal"])
 
 
 if __name__ == "__main__":
