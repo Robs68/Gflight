@@ -43,7 +43,7 @@ import sys
 import json
 
 # Email functionality.
-import smtplib
+# import smtplib
 
 # To get results from QPX.
 import requests
@@ -52,7 +52,7 @@ import requests
 import argparse
 
 # Some email modules we'll need.
-from email.mime.text import MIMEText
+# from email.mime.text import MIMEText
 
 # Date handling.
 from datetime import date, datetime, timedelta
@@ -98,14 +98,14 @@ def read_config():
         sys.exit(1)
     # TODO: Validate that the JSON config is in a valid JSON format.
     # Assign the configuration values to global variables.
-    global email_from
-    global smtp_server
-    global email_to
+    # global email_from
+    # global smtp_server
+    # global email_to
     global qpx_home
     global google_url
-    email_from = readable_config["notification"]["sender"]
-    smtp_server = readable_config["notification"]["SMTP_server"]
-    email_to = readable_config["notification"]["recipients"]["email"]
+    # email_from = readable_config["notification"]["sender"]
+    # smtp_server = readable_config["notification"]["SMTP_server"]
+    # email_to = readable_config["notification"]["recipients"]["email"]
     qpx_home = readable_config["home"]
     # Concatenate the Google QPX API base URL with my API key.
     google_url = readable_config["QPX_URL"] + readable_config["API_KEY"]
