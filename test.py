@@ -1,4 +1,5 @@
 import requests
+import json
 
 #origin = input("What is your city of origin? (Three letters):    ")
 #destination = input("Where would you like to travel to? (Three letters):    ")
@@ -23,7 +24,16 @@ payload = {
 url = 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyC9POMBiqyNxkigQG9rBguzKDlvZU0BcAM'
 r = requests.post(url, json=payload)
 formatted_response = r.json()
-total = formatted_response["trips"]["tripOption"][0]["saleTotal"]
+total = formatted_response["trips"]["tripOption"][0]["saleTotal"] 
+
 print("Total:", total)
 test_response = r.json()
-print(test_response)
+
+# print(test_response)
+
+print("") 
+
+airport_o = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["origin"]
+airport_d = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["destination"]
+duration = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["duration"]
+print("airport origin:", airport_o, "airport destination", airport_d, "duree", duration)
