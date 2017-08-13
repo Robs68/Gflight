@@ -279,10 +279,12 @@ def main(origin1, destination1, departure_date, duration, delay, solutions,
 
    # send_email(results_message_string, subject_origin_city, 
     #	subject_destination_city, trip["saleTotal"])
- print(results_message_string)
+
 
 if __name__ == "__main__":
     # Read configuration values from external config file.
     read_config()
     # Parse arguments from the CLI.
     get_args(sys.argv[1:])
+
+

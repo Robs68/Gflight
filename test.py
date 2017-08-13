@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 #origin = input("What is your city of origin? (Three letters):    ")
 #destination = input("Where would you like to travel to? (Three letters):    ")
@@ -17,7 +18,7 @@ payload = {
         "date": "2017-09-10"
       }
     ],
-    "solutions": "1"
+    "solutions": "10"
   }
 }
 
@@ -29,11 +30,24 @@ total = formatted_response["trips"]["tripOption"][0]["saleTotal"]
 print("Total:", total)
 test_response = r.json()
 
-# print(test_response)
+
+#print(test_response)
+airport_list = formatted_response["trips"]["data"]["airport"]
 
 print("") 
-
-airport_o = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["origin"]
-airport_d = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["destination"]
-duration = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["duration"]
+for trip in formatted_response["trips"]["tripOption"]:
+	for slices in trip["slice"]:
+		for segment in slices["segment"]:
+			for leg in segment["leg"]:
+				for airport in airport_list:
+					airport_o = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["origin"]
+					airport_d = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["destination"]
+					duration = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["duration"]
+#change = formatted_response["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["changePlane"]
 print("airport origin:", airport_o, "airport destination", airport_d, "duree", duration)
+
+f = open("out.txt","w")
+f.write(str(formatted_response))
+#f.write(r)
+f.close()
+

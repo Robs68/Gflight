@@ -1,0 +1,490 @@
+{
+ "kind": "qpxExpress#tripsSearch",
+ "trips": {
+  "kind": "qpxexpress#tripOptions",
+  "requestId": "9ywcpwl8iFxF2oi0h0R5Rf",
+  "data": {
+   "kind": "qpxexpress#data",
+   "airport": [
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "LAX",
+     "city": "LAX",
+     "name": "Los Angeles International"
+    },
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "LHR",
+     "city": "LON",
+     "name": "London Heathrow"
+    },
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "ORY",
+     "city": "PAR",
+     "name": "Paris Orly"
+    }
+   ],
+   "city": [
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "LAX",
+     "name": "Los Angeles"
+    },
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "LON",
+     "name": "London"
+    },
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "PAR",
+     "name": "Paris"
+    }
+   ],
+   "aircraft": [
+    {
+     "kind": "qpxexpress#aircraftData",
+     "code": "319",
+     "name": "Airbus A319"
+    },
+    {
+     "kind": "qpxexpress#aircraftData",
+     "code": "77W",
+     "name": "Boeing 777"
+    }
+   ],
+   "tax": [
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "XY",
+     "name": "US Immigration Fee"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "IZ_001",
+     "name": "France Air Passenger Solidarity Tax"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "QX_001",
+     "name": "France Passenger Service Charge International"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "FR_007",
+     "name": "France Airport Tax Domestic And International"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "UB_001",
+     "name": "United Kingdom Passenger Service Charge Departures"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "US_002",
+     "name": "US International Arrival Tax"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "XA",
+     "name": "USDA APHIS Fee"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "YC",
+     "name": "US Customs Fee"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "FR_001",
+     "name": "France Civil Aviation Tax Domestic And International"
+    }
+   ],
+   "carrier": [
+    {
+     "kind": "qpxexpress#carrierData",
+     "code": "BA",
+     "name": "British Airways p.l.c."
+    },
+    {
+     "kind": "qpxexpress#carrierData",
+     "code": "NZ",
+     "name": "Air New Zealand Limited"
+    }
+   ]
+  },
+  "tripOption": [
+   {
+    "kind": "qpxexpress#tripOption",
+    "saleTotal": "EUR596.60",
+    "id": "7IbeKHMdM48TnbidJ0fNhR001",
+    "slice": [
+     {
+      "kind": "qpxexpress#sliceInfo",
+      "duration": 1085,
+      "segment": [
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 85,
+        "flight": {
+         "carrier": "BA",
+         "number": "333"
+        },
+        "id": "GeLFctr+8574ySF6",
+        "cabin": "COACH",
+        "bookingCode": "N",
+        "bookingCodeCount": 8,
+        "marriedSegmentGroup": "0",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LlmNpeZR+V3apZBT",
+          "aircraft": "319",
+          "arrivalTime": "2017-09-10T10:45+01:00",
+          "departureTime": "2017-09-10T10:20+02:00",
+          "origin": "ORY",
+          "destination": "LHR",
+          "originTerminal": "W",
+          "destinationTerminal": "5",
+          "duration": 85,
+          "mileage": 228,
+          "meal": "Food and Beverages for Purchase"
+         }
+        ],
+        "connectionDuration": 330
+       },
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 670,
+        "flight": {
+         "carrier": "NZ",
+         "number": "1"
+        },
+        "id": "G7XoJfSbCuu-NGgZ",
+        "cabin": "COACH",
+        "bookingCode": "K",
+        "bookingCodeCount": 7,
+        "marriedSegmentGroup": "1",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LKhwUAte2kWvvilu",
+          "aircraft": "77W",
+          "arrivalTime": "2017-09-10T19:25-07:00",
+          "departureTime": "2017-09-10T16:15+01:00",
+          "origin": "LHR",
+          "destination": "LAX",
+          "originTerminal": "2",
+          "destinationTerminal": "B",
+          "duration": 670,
+          "mileage": 5440,
+          "meal": "Meal",
+          "secure": true
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "pricing": [
+     {
+      "kind": "qpxexpress#pricingInfo",
+      "fare": [
+       {
+        "kind": "qpxexpress#fareInfo",
+        "id": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "carrier": "NZ",
+        "origin": "PAR",
+        "destination": "LAX",
+        "basisCode": "KLA96W"
+       }
+      ],
+      "segmentPricing": [
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "segmentId": "GeLFctr+8574ySF6"
+       },
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "segmentId": "G7XoJfSbCuu-NGgZ"
+       }
+      ],
+      "baseFareTotal": "EUR496.00",
+      "saleFareTotal": "EUR496.00",
+      "saleTaxTotal": "EUR100.60",
+      "saleTotal": "EUR596.60",
+      "passengers": {
+       "kind": "qpxexpress#passengerCounts",
+       "adultCount": 1
+      },
+      "tax": [
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "IZ_001",
+        "chargeType": "GOVERNMENT",
+        "code": "IZ",
+        "country": "FR",
+        "salePrice": "EUR4.51"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "FR_007",
+        "chargeType": "GOVERNMENT",
+        "code": "FR",
+        "country": "FR",
+        "salePrice": "EUR12.75"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "FR_001",
+        "chargeType": "GOVERNMENT",
+        "code": "FR",
+        "country": "FR",
+        "salePrice": "EUR8.06"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "QX_001",
+        "chargeType": "GOVERNMENT",
+        "code": "QX",
+        "country": "FR",
+        "salePrice": "EUR11.36"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "US_002",
+        "chargeType": "GOVERNMENT",
+        "code": "US",
+        "country": "US",
+        "salePrice": "EUR15.33"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "UB_001",
+        "chargeType": "GOVERNMENT",
+        "code": "UB",
+        "country": "GB",
+        "salePrice": "EUR34.56"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "YC",
+        "chargeType": "GOVERNMENT",
+        "code": "YC",
+        "country": "US",
+        "salePrice": "EUR4.69"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "XY",
+        "chargeType": "GOVERNMENT",
+        "code": "XY",
+        "country": "US",
+        "salePrice": "EUR5.96"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "XA",
+        "chargeType": "GOVERNMENT",
+        "code": "XA",
+        "country": "US",
+        "salePrice": "EUR3.38"
+       }
+      ],
+      "fareCalculation": "PAR BA X/LON NZ LAX 556.65KLA96W NUC 556.65 END ROE 0.891032 FARE EUR 496.00 XT 20.81FR 4.51IZ 11.36QX 34.56UB 4.69YC 5.96XY 3.38XA 15.33US",
+      "latestTicketingTime": "2017-08-16T10:31-04:00",
+      "ptc": "ADT"
+     }
+    ]
+   },
+   {
+    "kind": "qpxexpress#tripOption",
+    "saleTotal": "EUR596.60",
+    "id": "7IbeKHMdM48TnbidJ0fNhR002",
+    "slice": [
+     {
+      "kind": "qpxexpress#sliceInfo",
+      "duration": 1220,
+      "segment": [
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 85,
+        "flight": {
+         "carrier": "BA",
+         "number": "331"
+        },
+        "id": "G-0rwL4p6tPXXnjo",
+        "cabin": "COACH",
+        "bookingCode": "N",
+        "bookingCodeCount": 9,
+        "marriedSegmentGroup": "0",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LMWsbcSk1BqBlZUN",
+          "aircraft": "319",
+          "arrivalTime": "2017-09-10T08:30+01:00",
+          "departureTime": "2017-09-10T08:05+02:00",
+          "origin": "ORY",
+          "destination": "LHR",
+          "originTerminal": "W",
+          "destinationTerminal": "5",
+          "duration": 85,
+          "mileage": 228,
+          "meal": "Food and Beverages for Purchase"
+         }
+        ],
+        "connectionDuration": 465
+       },
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 670,
+        "flight": {
+         "carrier": "NZ",
+         "number": "1"
+        },
+        "id": "G7XoJfSbCuu-NGgZ",
+        "cabin": "COACH",
+        "bookingCode": "K",
+        "bookingCodeCount": 7,
+        "marriedSegmentGroup": "1",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LKhwUAte2kWvvilu",
+          "aircraft": "77W",
+          "arrivalTime": "2017-09-10T19:25-07:00",
+          "departureTime": "2017-09-10T16:15+01:00",
+          "origin": "LHR",
+          "destination": "LAX",
+          "originTerminal": "2",
+          "destinationTerminal": "B",
+          "duration": 670,
+          "mileage": 5440,
+          "meal": "Meal",
+          "secure": true
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "pricing": [
+     {
+      "kind": "qpxexpress#pricingInfo",
+      "fare": [
+       {
+        "kind": "qpxexpress#fareInfo",
+        "id": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "carrier": "NZ",
+        "origin": "PAR",
+        "destination": "LAX",
+        "basisCode": "KLA96W"
+       }
+      ],
+      "segmentPricing": [
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "segmentId": "G7XoJfSbCuu-NGgZ"
+       },
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AoEzQAuyI3VaVIXbh2EAswLUjGQ9anLcpnP9bI2TfW4E",
+        "segmentId": "G-0rwL4p6tPXXnjo"
+       }
+      ],
+      "baseFareTotal": "EUR496.00",
+      "saleFareTotal": "EUR496.00",
+      "saleTaxTotal": "EUR100.60",
+      "saleTotal": "EUR596.60",
+      "passengers": {
+       "kind": "qpxexpress#passengerCounts",
+       "adultCount": 1
+      },
+      "tax": [
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "IZ_001",
+        "chargeType": "GOVERNMENT",
+        "code": "IZ",
+        "country": "FR",
+        "salePrice": "EUR4.51"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "FR_007",
+        "chargeType": "GOVERNMENT",
+        "code": "FR",
+        "country": "FR",
+        "salePrice": "EUR12.75"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "FR_001",
+        "chargeType": "GOVERNMENT",
+        "code": "FR",
+        "country": "FR",
+        "salePrice": "EUR8.06"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "QX_001",
+        "chargeType": "GOVERNMENT",
+        "code": "QX",
+        "country": "FR",
+        "salePrice": "EUR11.36"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "US_002",
+        "chargeType": "GOVERNMENT",
+        "code": "US",
+        "country": "US",
+        "salePrice": "EUR15.33"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "UB_001",
+        "chargeType": "GOVERNMENT",
+        "code": "UB",
+        "country": "GB",
+        "salePrice": "EUR34.56"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "YC",
+        "chargeType": "GOVERNMENT",
+        "code": "YC",
+        "country": "US",
+        "salePrice": "EUR4.69"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "XY",
+        "chargeType": "GOVERNMENT",
+        "code": "XY",
+        "country": "US",
+        "salePrice": "EUR5.96"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "XA",
+        "chargeType": "GOVERNMENT",
+        "code": "XA",
+        "country": "US",
+        "salePrice": "EUR3.38"
+       }
+      ],
+      "fareCalculation": "PAR BA X/LON NZ LAX 556.65KLA96W NUC 556.65 END ROE 0.891032 FARE EUR 496.00 XT 20.81FR 4.51IZ 11.36QX 34.56UB 4.69YC 5.96XY 3.38XA 15.33US",
+      "latestTicketingTime": "2017-08-16T10:31-04:00",
+      "ptc": "ADT"
+     }
+    ]
+   }
+  ]
+ }
+}
