@@ -25,8 +25,13 @@ print("")
 #for x in data["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"]:
 #	print(x['airport_o'])
 
-
-for i in test : 
+origine_air = []
+destination_air = []
+for i in test :
+	current_d = [] 
+	current_o = []
+	destination_air.append(current_d)
+	origine_air.append(current_o)
 #	print i['leg']
 	test2 = i['leg']
 	for o in test2:
@@ -34,7 +39,13 @@ for i in test :
 		origine = o['origin']
 		print("origine :",origine, "destination :", destination)
 		#print o['destination']
-
-trip = destination + origine
-
+		current_d.append(destination)
+		current_o.append(origine)
+trip = origine_air + destination_air
+#print destination_air
+#print origine_air
+print ("")
+#pprint(origine_air)
+#pprint(destination_air)
 print trip
+print ("")
