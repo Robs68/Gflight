@@ -49,27 +49,33 @@ trip = origine_air + destination_air
 #pprint(destination_air)
 print trip
 print ("")
-duree_trip = data["trips"]["tripOption"][0]["slice"][0]["duration"]
-duree_trip_h = duree_trip // 60
-print duree_trip_h
-price = data["trips"]["tripOption"][0]["saleTotal"]
-print price
+#duree_trip = data["trips"]["tripOption"][0]["slice"][0]["duration"]
+#duree_trip_h = duree_trip // 60
+#print duree_trip_h
+#price = data["trips"]["tripOption"][0]["saleTotal"]
+#print price
 
 #mutlievols
 multivol = data['trips']['tripOption']
 for p in multivol : 
+	print("")
 	multivol1 = p['slice']
+	prix = p['saleTotal']
+        print prix
 	for q in multivol1 : 
 		multivol2 = q['segment']
-		durra = q['duration']
-		print durra
+		duree_trip = q['duration']
+		duree_trip_h = duree_trip // 60
+		print duree_trip_h
 		for s in multivol2 :
 			multivol3 = s['leg']
 			for d in multivol3 : 
 				ori = d['origin']
 				dest = d['destination']
-				vola = ori + dest
-				print vola
+				heure_ar = d['arrivalTime']
+				heure_de = d['departureTime']
+				vol_entier = ori + dest
+				print vol_entier
  
 				
 

@@ -18,7 +18,7 @@ payload = {
         "date": "2017-09-10"
       }
     ],
-    "solutions": "10"
+    "solutions": "20"
   }
 }
 
@@ -51,3 +51,19 @@ f.write(str(formatted_response))
 #f.write(r)
 f.close()
 
+multivol = formatted_response['trips']['tripOption']
+for p in multivol :
+        multivol1 = p['slice']
+        prix = p['saleTotal']
+        print prix
+        for q in multivol1 :
+                multivol2 = q['segment']
+                durra = q['duration']
+                print durra
+                for s in multivol2 :
+                        multivol3 = s['leg']
+                        for d in multivol3 :
+                                ori = d['origin']
+                                dest = d['destination']
+                                vola = ori + dest
+                                print vola
