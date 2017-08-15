@@ -52,18 +52,46 @@ f.write(str(formatted_response))
 f.close()
 
 multivol = formatted_response['trips']['tripOption']
+origine_air = []
+destination_air = []
+vol_entier = []
+price = []
+count_vol = 0
+count_vol_connecting = 0
 for p in multivol :
+        print("")
         multivol1 = p['slice']
         prix = p['saleTotal']
-        print prix
+        price.append(prix)
         for q in multivol1 :
+                count_vol += 1
                 multivol2 = q['segment']
-                durra = q['duration']
-                print durra
+                duree_trip = q['duration']
+                duree_trip_h = duree_trip // 60
                 for s in multivol2 :
                         multivol3 = s['leg']
                         for d in multivol3 :
+                                count_vol_connecting += 1
                                 ori = d['origin']
                                 dest = d['destination']
-                                vola = ori + dest
-                                print vola
+                                heure_ar = d['arrivalTime']
+                                heure_de = d['departureTime']
+                                vol_entier = ori + dest
+#                               print vol_entier
+                                origine_air.append(ori)
+                                destination_air.append(dest)
+#                               print origine_air
+
+concatenate = zip(origine_air,destination_air)
+print concatenate
+#sauvegarde des valeurs recues
+vol_1_part_1 = concatenate[0][0]+concatenate[0][1]
+vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
+prix_vol_1 = price[0][3:7]
+vol_1 = [vol_1_part_1, vol_1_part_2,prix_vol_1]
+print vol_1
+vol_2_part_1 = concatenate[2][0]+concatenate[2][1]
+vol_2_part_2 = concatenate[3][0]+concatenate[3][1]
+prix_vol_2 = price[1][3:7]
+vol_2 = [vol_2_part_1,vol_2_part_2,prix_vol_2]
+print vol_2
