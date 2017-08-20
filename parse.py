@@ -3,7 +3,6 @@ import json
 from pprint import pprint
 import itertools
 import sqlite3
-# coding=utf-8
 print("Lancement du script")
 
 file = open("out2", "r")
@@ -11,7 +10,6 @@ fichier=file.read()
 with open('out2') as data_file:
 	data = json.load(data_file)
 
-#test = data['trips']['tripOption'][0]['slice'][0]['segment']
 #mutlievols
 multivol = data['trips']['tripOption']
 origine_air = []
@@ -64,13 +62,14 @@ vol_1_part_1 = concatenate[0][0]+concatenate[0][1]
 vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
 prix_vol_1 = price[0][3:7]
 vol_1 = [vol_1_part_1,vol_1_part_2,prix_vol_1]
-#print vol_1
+print vol_1
 vol_2_part_1 = concatenate[2][0]+concatenate[2][1]
 vol_2_part_2 = concatenate[3][0]+concatenate[3][1]
 prix_vol_2 = price[1][3:7]
 vol_2 = [vol_2_part_1,vol_2_part_2,prix_vol_2]
-#print vol_2
-vol = zip(vol_1,vol_2,price)
+print vol_2
+vol = [(vol_1),(vol_2)]
+#vol = zip(vol_1,vol_2,price)
 print vol
 
 #enregistrement
@@ -84,4 +83,4 @@ cursor = connection.cursor()
 #var_string = ', '.join(map(str, vol))
 query = 'INSERT INTO orylax VALUES (?,?,?)'
 cursor.executemany(query, vol)
-connection.commit()
+connection.commit() #mauvais ordre table
