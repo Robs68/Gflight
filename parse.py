@@ -83,4 +83,4 @@ cursor = connection.cursor()
 #var_string = ', '.join(map(str, vol))
 query = 'INSERT INTO orylax VALUES (?,?,?)'
 cursor.executemany(query, vol)
-connection.commit() #mauvais ordre table
+connection.commit()
