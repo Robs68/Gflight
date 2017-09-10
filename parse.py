@@ -54,15 +54,16 @@ cursor = connection.cursor()
 #print vol_entier2
 #vol1
 vol_1_part_1 = concatenate[0][0]+concatenate[0][1]
-vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
 prix_vol_1 = price[0][3:6]
-if "LAX" in vol_1_part_2:
-	vol_1 = [vol_1_part_1,vol_1_part_2,"",heure_de,duree_trip,prix_vol_1]
-#	cursor.executemany('INSERT INTO orylax (trajet1, trajet2, trajet3, prix) values (?,?,?,?)',(vol_1,))
+if "LAX" in vol_1_part_1:
+	vol_1 = [vol_1_part_1," "," ", heure_de,duree_trip,prix_vol_1]
 else:
-	vol_1_part_2 = concatenate[2][0]+concatenate[2][1]
-	vol_1 = [vol_1_part_1,vol_1_part_2,vol_1_part_3,heure_de,duree_trip,prix_vol_1]
-#       cursor.executemany('INSERT INTO orylax (trajet1, trajet2, trajet3, prix) values (?,?,?,?)',(vol_1,))
+	vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
+	if "LAX" in vol_1_part_2:
+		vol_1 = [vol_1_part_1,vol_1_part_2," ",heure_de,duree_trip,prix_vol_1]
+	else:
+		vol_1_part_2 = concatenate[2][0]+concatenate[2][1]
+		vol_1 = [vol_1_part_1,vol_1_part_2,vol_1_part_3,heure_de,duree_trip,prix_vol_1]
 
 cursor.executemany('INSERT INTO orylax (trajet1, trajet2, trajet3, heure_depart, duree, prix) values (?,?,?,?,?,?)',(vol_1,))
 connection.commit()
