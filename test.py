@@ -4,6 +4,10 @@ import sys
 import sqlite3
 import itertools
 
+origin = "ORY"
+destination = "LHR"
+date = "2017-09-20"
+
 payload = {
   "request": {
     "passengers": {
@@ -11,9 +15,9 @@ payload = {
     },
     "slice": [
       {
-        "origin": "ORY",
-        "destination": "LHR",
-        "date": "2017-09-20"
+        "origin": origin,
+        "destination": destination,
+        "date": date
       }
     ],
     "solutions": "5"
@@ -79,12 +83,12 @@ cursor = connection.cursor()
 #print vol_entier2
 #vol1
 vol_1_part_1 = concatenate[0][0]+concatenate[0][1]
-prix_vol_1 = price[0][3:6]
-if "LHR" in vol_1_part_1:
+prix_vol_1 = price[0][3:7]
+if destination in vol_1_part_1:
 	vol_1 = [vol_1_part_1," "," ", heure_de,duree_trip,prix_vol_1]
 else:
 	vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
-	if "LHR" in vol_1_part_2:
+	if destination in vol_1_part_2:
 		vol_1 = [vol_1_part_1,vol_1_part_2," ",heure_de,duree_trip,prix_vol_1]
 	else:
 		vol_1_part_3 = concatenate[2][0]+concatenate[2][1]
