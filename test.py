@@ -7,15 +7,23 @@ import argparse
 
 #origin = "ORY"
 #destination = "LHR"
-#date = "2017-09-20"
+#date = "2017-09-20" Y-M-D
 
-#test de parser
+#arguments en IN
 parser = argparse.ArgumentParser()
 parser.add_argument('-o',dest='origin')
 parser.add_argument('-d',dest='destination')
 parser.add_argument('-date',dest='date')
 args = parser.parse_args()
 
+#passage en minuscule pour bdd
+origine = args.origin
+destination = args.destination
+date = args.date
+
+origine = origine.lower()
+destination = destination.lower()
+name_of_bdd = ''.join((origine,destination))
 
 payload = {
   "request": {
