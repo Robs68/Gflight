@@ -40,13 +40,15 @@ heure_UTC()
 #cursor.execute("select heure_depart,prix from orylax ORDER BY prix ASC LIMIT 10")
 cursor.execute("select heure_depart,prix from orylax ORDER BY prix")
 vol_2D = cursor.fetchall()
+taille = len(vol_2D)
 
 def format_date_2D():
         element=vol_2D[i][0]
         change_date=element[0:10]
 	return change_date
-for i in range(0,10):
+for i in range(0,taille):
 	vol_2D[i]=(format_date_2D(),vol_2D[i][1])
+
 
 #vol 3D
 #cursor.execute("select heure_depart,prix,duree from orylax ORDER BY prix ASC LIMIT 10")
@@ -57,7 +59,7 @@ def format_date_3D():
 	element=vol_3D[i][0]
         change_date=element[0:10]
         return change_date
-for i in range(0,10):
+for i in range(0,taille):
 	vol_3D[i]=(format_date_3D(),vol_3D[i][1],vol_3D[i][2])
 
 #ecriture du CSV 2D
