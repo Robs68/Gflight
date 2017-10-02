@@ -37,7 +37,8 @@ def heure_UTC():
 heure_UTC()
 
 #vol 2D
-cursor.execute("select heure_depart,prix from orylax ORDER BY prix ASC LIMIT 10")
+#cursor.execute("select heure_depart,prix from orylax ORDER BY prix ASC LIMIT 10")
+cursor.execute("select heure_depart,prix from orylax ORDER BY prix")
 vol_2D = cursor.fetchall()
 
 def format_date_2D():
@@ -48,7 +49,8 @@ for i in range(0,10):
 	vol_2D[i]=(format_date_2D(),vol_2D[i][1])
 
 #vol 3D
-cursor.execute("select heure_depart,prix,duree from orylax ORDER BY prix ASC LIMIT 10")
+#cursor.execute("select heure_depart,prix,duree from orylax ORDER BY prix ASC LIMIT 10")
+cursor.execute("select heure_depart,prix,duree from orylax ORDER BY prix")
 vol_3D=cursor.fetchall()
 
 def format_date_3D():
@@ -57,18 +59,17 @@ def format_date_3D():
         return change_date
 for i in range(0,10):
 	vol_3D[i]=(format_date_3D(),vol_3D[i][1],vol_3D[i][2])
-print vol_3D
 
 #ecriture du CSV 2D
-with open('file_orylax.csv','wb') as out:
+with open('file_orylax_2D.csv','wb') as out:
 	csv_out=csv.writer(out)
 	for row in vol_2D:
 		csv_out.writerow(row)
 
 #ecriture du CSV 3D
-with open('file_orylax.csv','wb') as out:
+with open('file_orylax_3D.csv','wb') as out:
         csv_out=csv.writer(out)
-        for row in vol_2D:
+        for row in vol_3D:
                 csv_out.writerow(row)
 
 print ("fin")

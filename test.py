@@ -1,14 +1,18 @@
+#!/home/root/bin/python
 import requests
 import json
 import sys
 import sqlite3
 import itertools
 import argparse
+import time
 
 #origin = "ORY"
 #destination = "LHR"
 #date = "2017-09-20" Y-M-D
-
+temps = time.strftime('%H:%M')
+print temps
+print "lancement du script python orylax"
 #arguments en IN
 parser = argparse.ArgumentParser()
 parser.add_argument('-o',dest='origin')
@@ -47,15 +51,15 @@ formatted_response = r.json()
 test_response = r.json()
 
 #Save fichier
-f = open("out.txt","w")
-f.write(str(formatted_response))
+#f = open("out.txt","w")
+#f.write(str(formatted_response))
 #f.write(r)
-f.close()
+#f.close()
 
-f = open("out3.txt","w")
-f.write(str(formatted_response))
+#f = open("out3.txt","w")
+#f.write(str(formatted_response))
 #f.write(r)
-f.close()
+#f.close()
 
 multivol = formatted_response['trips']['tripOption']
 origine_air = []
@@ -96,21 +100,24 @@ concatenate = zip(origine_air,destination_air)
 connection = sqlite3.connect("travel.db")
 cursor = connection.cursor()
 
+#date
+now = time.strftime('%Y-%m-%d-T-%H:%M')
 #Tuple des valeurs recues
 #print vol_entier2
 #vol1
 vol_1_part_1 = concatenate[0][0]+concatenate[0][1]
 prix_vol_1 = price[0][3:7]
 if args.destination in vol_1_part_1:
-	vol_1 = [vol_1_part_1," "," ", heure_de,duree_trip,prix_vol_1]
+	vol_1 = [now,vol_1_part_1," "," ", heure_de,duree_trip,prix_vol_1]
 else:
 	vol_1_part_2 = concatenate[1][0]+concatenate[1][1]
 	if args.destination in vol_1_part_2:
-		vol_1 = [vol_1_part_1,vol_1_part_2," ",heure_de,duree_trip,prix_vol_1]
+		vol_1 = [now,vol_1_part_1,vol_1_part_2," ",heure_de,duree_trip,prix_vol_1]
 	else:
 		vol_1_part_3 = concatenate[2][0]+concatenate[2][1]
-		vol_1 = [vol_1_part_1,vol_1_part_2,vol_1_part_3,heure_de,duree_trip,prix_vol_1]
+		vol_1 = [now,vol_1_part_1,vol_1_part_2,vol_1_part_3,heure_de,duree_trip,prix_vol_1]
 
-cursor.executemany('INSERT INTO orylax (trajet1, trajet2, trajet3, heure_depart, duree, prix) values (?,?,?,?,?,?)',(vol_1,))
+cursor.executemany('INSERT INTO orylax (heure_recherche,trajet1, trajet2, trajet3, heure_depart, duree, prix) values (?,?,?,?,?,?,?)',(vol_1,))
+#cursor.executrmany('delete from orylax where rowid not in (select min(rowid) from orylax group by heure_depart,prix)')
 connection.commit()
 print ("script fini")
