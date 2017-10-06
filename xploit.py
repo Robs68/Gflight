@@ -1,7 +1,7 @@
 import sqlite3
 from operator import itemgetter, attrgetter
 import csv
-
+import ftplib
 
 print ("exploitation des donnees")
 
@@ -73,5 +73,14 @@ with open('file_orylax_3D.csv','wb') as out:
         csv_out=csv.writer(out)
         for row in vol_3D:
                 csv_out.writerow(row)
+
+#Envoie fichiers vers Syno
+connect = ftplib.FTP('192.168.1.17','Rasp','Tata25!')
+fichier = 'file_orylax_2D.csv'
+file = open(fichier, 'rb')
+connect.cwd('/home')
+connect.storbinary('STOR fichier',file)
+file.close()
+connect.quit
 
 print ("fin")
