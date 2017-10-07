@@ -11,8 +11,8 @@ import time
 #destination = "LHR"
 #date = "2017-09-20" Y-M-D
 temps = time.strftime('%H:%M')
-print temps
-print "lancement du script python orylax"
+print (temps)
+print ("lancement du script python orylax")
 #arguments en IN
 parser = argparse.ArgumentParser()
 parser.add_argument('-o',dest='origin')
