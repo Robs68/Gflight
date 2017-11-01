@@ -2,6 +2,7 @@ import sqlite3
 from operator import itemgetter, attrgetter
 import csv
 import ftplib
+from datetime import datetime
 
 print ("exploitation des donnees")
 
@@ -62,10 +63,23 @@ def fichier_CSV(base_de_donnee):
         	        csv_out.writerow(row)
 	return fichier_CSV
 
+def delta_prix(base_de_donnee):
+	cursor.execute("select heure_recherche,heure_depart,duree,prix from "+base_courante+" ORDER BY prix,heure_depart,heure_recherche")
+	data=cursor.fetchone()
+	date_recherche=data[0][0:10]
+	heure_recherche=data[0][13:18]
+	date_vol=data[1][0:10]
+	prix_vol=data[3]
+	a = datetime.strptime(date_recherche,"%Y-%m-%d")
+	b = datetime.strptime(date_vol,"%Y-%m-%d")
+	delta = (b-a).days
+	print ("Le delta minimal pour prendre les billets pour le trajet "+base_courante+" est : " +str(delta)+" jours. Le prix est de : " +str(prix_vol)+ " euros")
+	return delta
 #main 
 for i in range(length_tuple):
         base_courante=''.join(liste_table[i])
         supp_doublons(base_courante)
+	delta_prix(base_courante)
 	fichier_CSV(base_courante)
 
 #heure_UTC()
